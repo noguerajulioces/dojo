@@ -69,7 +69,6 @@ def print_hello_x_or_ten_times(x = 10): #hay una funcion con un for x veces, de 
 print_hello_x_or_ten_times()
 print_hello_x_or_ten_times(4)
 
-
 """
 Bonus section
 """
