@@ -32,42 +32,54 @@
 #         self.balance_cuenta += amount	# la cuenta del usuario específico aumenta en la cantidad del valor recibido
 # # método de clase para cambiar el nombre del banco
 
-class CuentaBancaria:
-    nombre_banco = "Primer Dojo Nacional"
-    todas_las_cuentas = []
+# class CuentaBancaria:
+#     nombre_banco = "Primer Dojo Nacional"
+#     todas_las_cuentas = []
 
-    def __init__(self, int_rate, balance):
-        self.tasa_int = int_rate
-        self.balance = balance
-        CuentaBancaria.todas_las_cuentas.append(self)
+#     def __init__(self, int_rate, balance):
+#         self.tasa_int = int_rate
+#         self.balance = balance
+#         CuentaBancaria.todas_las_cuentas.append(self)
 
-    def re_tiro(self, amount):
-        # Podemos usar el método estático aquí para evaluar
-        # si podemos retirar los fondos sin quedar con balance negativo
-        if CuentaBancaria.puede_retirar(self.balance, amount):
-            self.balance -= amount
-        else:
-            print("Fondos insuficientes")
-        return self
+#     def re_tiro(self, amount):
+#         # Podemos usar el método estático aquí para evaluar
+#         # si podemos retirar los fondos sin quedar con balance negativo
+#         if CuentaBancaria.puede_retirar(self.balance, amount):
+#             self.balance -= amount
+#         else:
+#             print("Fondos insuficientes")
+#         return self
 
-    # Los métodos estáticos no tienen acceso a ningún atributo
-    # solo a lo que se le pasa
-    @staticmethod
-    def puede_retirar(balance, amount):
-        if (balance - amount) < 0:
-            return False
-        else:
-            return True
+#     # Los métodos estáticos no tienen acceso a ningún atributo
+#     # solo a lo que se le pasa
+#     @staticmethod
+#     def puede_retirar(balance, amount):
+#         if (balance - amount) < 0:
+#             return False
+#         else:
+#             return True
 
-    @classmethod
-    def cambiar_nombre_banco(cls, name):
-        cls.nombre_banco = name
+#     @classmethod
+#     def cambiar_nombre_banco(cls, name):
+#         cls.nombre_banco = name
 
-    @classmethod
-    def todos_los_balances(cls):
-        sum = 0
-        for account in cls.todas_las_cuentas:
-            sum += account.balance
-        return sum
+#     @classmethod
+#     def todos_los_balances(cls):
+#         sum = 0
+#         for account in cls.todas_las_cuentas:
+#             sum += account.balance
+#         return sum
+
+# PARA ENTENDER LA ANULACIÓN
+class Padre:
+    def method_a(self):
+        print("invocando método_a PADRE")
+class Hijo(Padre):
+    def method_a(self):
+        print("invocando método_a HIJO")
+papá = Padre()
+hijo = Hijo()
+papá.method_a()
+hijo.method_a() # Nota que esto anula el método Padre
 
 
