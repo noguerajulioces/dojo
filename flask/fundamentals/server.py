@@ -1,14 +1,14 @@
-from flask import Flask, render_template  
+from flask import Flask, render_template, request, redirect
 app = Flask (__name__)
 
 # tarea chessboard
-@app.route('/')
-def blank_chessboard():
-    return render_template('index.html')
+# @app.route('/')
+# def blank_chessboard():
+#     return render_template('index.html')
 
-@app.route('/<int:x>')
-def custom_chessboard(x):
-    return render_template('custom.html', x= x)
+# @app.route('/<int:x>')
+# def custom_chessboard(x):
+#     return render_template('custom.html', x= x)
 
 #clase sobre listas y diccionarios
 @app.route('/lists')
@@ -31,6 +31,17 @@ def table_html():
         {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
     return render_template("table.html", users = users)
+
+#ENVIO DE FORMULARIO POST
+@app.route('/')
+def index():
+    return render_template("form.html")
+
+@app.route('/users', methods=['POST'])
+def create_user():
+    print("Got Post Info")
+    print(request.form)
+    return redirect('/') #FUNDAMENTAL DIRECCIONAR A LA PAGINA DE ORIGEN
 
 if __name__ == "__main__":
     app.run(debug=True)
