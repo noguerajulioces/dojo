@@ -1,8 +1,21 @@
-h1 {
+h1, h2 {
     background: linear-gradient(to right, #92044b, #E19898, #FE7BE5 );
     background-clip: text; /* Standard property */
     -webkit-background-clip: text; /* For compatibility with WebKit browsers */
     color: transparent;
+    font-size: 20px;
+}
+
+table {
+    border: 2px solid rgb(134, 8, 134);
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid pink;
+    padding: 8px;
+    text-align: left; 
 }
 
 .color1{
