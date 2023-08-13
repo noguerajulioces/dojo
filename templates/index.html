@@ -48,11 +48,11 @@
                         <td>Strawberry</td>
                         <td>
                             <select name='strawberry'>
-                                <option value='0'>0</option>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
+                              <option value='0' {% if request.form['strawberry'] == '0' %}selected{% endif %}>0</option>
+                              <option value='1' {% if request.form['strawberry'] == '1' %}selected{% endif %}>1</option>
+                              <option value='2' {% if request.form['strawberry'] == '0' %}selected{% endif %}>2</option>
+                              <option value='3' {% if request.form['strawberry'] == '1' %}selected{% endif %}>3</option>
+                              <option value='4' {% if request.form['strawberry'] == '1' %}selected{% endif %}>4</option>
                             </select>
                         </td>
                     </tr>
@@ -60,11 +60,11 @@
                         <td>Raspberry</td>
                         <td>
                             <select name='raspberry'>
-                                <option value='0'>0</option>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
+                              <option value='0' {% if request.form['raspberry'] == '0' %}selected{% endif %}>0</option>
+                              <option value='1' {% if request.form['raspberry'] == '1' %}selected{% endif %}>1</option>
+                              <option value='2' {% if request.form['raspberry'] == '0' %}selected{% endif %}>2</option>
+                              <option value='3' {% if request.form['raspberry'] == '1' %}selected{% endif %}>3</option>
+                              <option value='4' {% if request.form['raspberry'] == '1' %}selected{% endif %}>4</option>
                             </select>
                         </td>
                     </tr>
@@ -72,11 +72,11 @@
                         <td>Apple</td>
                         <td>
                             <select name='apple'>
-                                <option value='0'>0</option>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
+                              <option value='0' {% if request.form['apple'] == '0' %}selected{% endif %}>0</option>
+                              <option value='1' {% if request.form['apple'] == '1' %}selected{% endif %}>1</option>
+                              <option value='2' {% if request.form['apple'] == '2' %}selected{% endif %}>2</option>
+                              <option value='3' {% if request.form['apple'] == '3' %}selected{% endif %}>3</option>
+                              <option value='4' {% if request.form['apple'] == '4' %}selected{% endif %}>4</option>                              
                             </select>
                         </td>
                     </tr>
@@ -97,7 +97,7 @@
   
                 <div class="mb-3">
                     <label for="email">Your Student ID <span class="text-muted">(Optional)</span></label>
-                    <input type="text" class="form-control" name="student_id" placeholder="123-456-7890">
+                    <input type="text" class="form-control" name="student_ID" placeholder="123-456-7890">
                 </div>
               
                 <hr class="mb-4">
