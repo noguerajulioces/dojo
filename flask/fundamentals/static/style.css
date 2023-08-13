@@ -1,0 +1,17 @@
+h1 {
+    background: linear-gradient(to right, #92044b, #E19898, #FE7BE5 );
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For compatibility with WebKit browsers */
+    color: transparent;
+}
+
+.color1{
+    background-color: palevioletred;
+    width: 50px;
+    height: 50px;
+    border: 1px solid beige;
+}
+.color2{
+    background-color: papayawhip;
+    width: 50px
+}
