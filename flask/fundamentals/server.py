@@ -49,7 +49,7 @@ def create_user():
 @app.route('/show')
 def show_user():
     return render_template('show.html')
-"""
+
 @app.route('/', methods=['GET', 'POST'])
 def counter():
     if request.method == 'POST':
@@ -62,7 +62,6 @@ def counter():
 def destroy_session():
     session.clear() 
     return redirect('/')
-
-
+"""
 if __name__ == "__main__":
     app.run(debug=True)

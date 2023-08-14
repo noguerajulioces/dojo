@@ -49,7 +49,7 @@ def create_user():
 @app.route('/show')
 def show_user():
     return render_template('show.html')
-"""
+
 @app.route('/', methods=['GET', 'POST'])
 def counter():
     if request.method == 'POST':
@@ -58,6 +58,10 @@ def counter():
         session.setdefault('user_visit', 0)  # Inicializar user_visit si no existe en la sesión
     return render_template('counter.html', user_visit=session['user_visit'])
 
-
+@app.route('/destroy_session', methods=['GET', 'POST'])
+def destroy_session():
+    session.clear() 
+    return redirect('/')
+"""
 if __name__ == "__main__":
     app.run(debug=True)
