@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 app = Flask (__name__)
+app.secret_key = 'keep it secret, keep it safe' #CLAVE SECRETA NECESARIA
 
+""""
 # tarea chessboard
 # @app.route('/')
 # def blank_chessboard():
@@ -40,8 +42,27 @@ def index():
 @app.route('/users', methods=['POST'])
 def create_user():
     print("Got Post Info")
-    print(request.form)
-    return redirect('/') #FUNDAMENTAL DIRECCIONAR A LA PAGINA DE ORIGEN
+    session['username'] = request.form['name'] #con estas dos prop ya tenemos acceso a esos datos de post
+    session['useremail'] = request.form['email']
+    return redirect('/show') #FUNDAMENTAL DIRECCIONAR A LA PAGINA DE ORIGEN
+
+@app.route('/show')
+def show_user():
+    return render_template('show.html')
+"""
+@app.route('/', methods=['GET', 'POST'])
+def counter():
+    if request.method == 'POST':
+        session['user_visit'] = int(request.form['user_visit']) + 1
+    else:
+        session.setdefault('user_visit', 0)  # Inicializar user_visit si no existe en la sesión
+    return render_template('counter.html', user_visit=session['user_visit'])
+
+@app.route('/destroy_session', methods=['GET', 'POST'])
+def destroy_session():
+    session.clear() 
+    return redirect('/')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

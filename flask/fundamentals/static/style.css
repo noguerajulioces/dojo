@@ -3,7 +3,7 @@ h1, h2 {
     background-clip: text; /* Standard property */
     -webkit-background-clip: text; /* For compatibility with WebKit browsers */
     color: transparent;
-    font-size: 20px;
+    font-size: 50px;
 }
 
 table {
@@ -27,4 +27,30 @@ th, td {
 .color2{
     background-color: papayawhip;
     width: 50px
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+.btn-primary {
+    background-color: #dc09f0;
+    border-color: #300126;
+    margin-bottom: 20px;
+}
+.btn-primary:hover {
+    background-color: #300126;
+    border-color: #dc09f0;
+}
+.btn-secondary {
+    background-color: #dc09f0;
+    border-color: #300126;
+}
+.btn-secondary:hover {
+    background-color: #300126;
+    border-color: #dc09f0;
 }
