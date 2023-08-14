@@ -1,13 +1,26 @@
-from flask import Flask, render_template  
-app = Flask (__name__)
+from flask import Flask, render_template, request, redirect
+app = Flask(__name__)  
 
-@app.route('/')
-def blank_chessboard():
-    return render_template('index.html')
+@app.route('/')         
+def index():
+    return render_template("index.html")
 
-@app.route('/<int:x>')
-def custom_chessboard(x):
-    return render_template('custom.html', x= x)
+@app.route('/checkout', methods=['POST'])         
+def checkout():
+    first_name = request.form.get('first_name', '')
+    last_name = request.form.get('last_name', '')
+    student_ID = request.form.get('student_ID', '')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    client = {
+        'first_name': first_name,
+        'last_name': last_name,
+        'student_ID': student_ID
+        }
+    return render_template("checkout.html", client = client)
+
+@app.route('/fruits')         
+def fruits():
+    return render_template("fruits.html")
+
+if __name__=="__main__":   
+    app.run(debug=True)    
